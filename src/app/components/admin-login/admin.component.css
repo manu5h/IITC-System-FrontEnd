@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   justify-content: flex-start; 
   align-items: center;
-  background-image: url("../../../assets/admin\ background.jpg");
+  background-image: url("../../../assets/homepageBackgroundImage.jpg");
   background-size: cover;
   background-position: center;
   color: rgb(0, 0, 0);
@@ -41,7 +41,7 @@ body {
 }
 .studentNote{
   position: absolute; 
-  top: 200px; 
+  top: 250px; 
   font-size: 25px;
   color: #017BAE; 
 }

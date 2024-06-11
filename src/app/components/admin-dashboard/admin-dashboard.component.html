@@ -1,0 +1,326 @@
+<header>
+    <h1>IICT Admin Dashboard</h1>
+</header>
+
+<main class="main">
+    <section id="students-table">
+        <h2>Students Table</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Course Year</th>
+                    <th>Course ID</th>
+                    <th>Full Name</th>
+                    <th>Name with Initials</th>
+                    <th>NIC</th>
+                    <th>MIS Number</th>
+                    <th>Mobile</th>
+                    <th>Address</th>
+                    <th>Gender</th>
+                    <th>Password</th>
+                    <th>Date Entered</th>
+                    <th>Module 1</th>
+                    <th>Module 1 marks</th>
+                    <th>Module 2</th>
+                    <th>Module 2 marks</th>
+                    <th>Module 3</th>
+                    <th>Module 3 marks</th>
+                    <th>Dropout</th>
+                    <th>Final Exam Sitted</th>
+                    <th>Repeat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2024</td>
+                    <td>101</td>
+                    <td>John Doe</td>
+                    <td>J. Doe</td>
+                    <td>123456789</td>
+                    <td>MIS123456</td>
+                    <td>1234567890</td>
+                    <td>123 Main St</td>
+                    <td>Male</td>
+                    <td>asdefr34</td>
+                    <td>2024-06-25</td>
+                    <td>sc1454</td>
+                    <td>45</td>
+                    <td>sc1453</td>
+                    <td>89</td>
+                    <td>sc1452</td>
+                    <td>38</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </section>
+</main>
+
+
+<main class="main">
+    <section id="exam-result-entry">
+        <h2>Exam Result Entry</h2>
+        <form id="examResultForm" onsubmit="return submitExamResult()">
+            <div class="form-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" required>
+            </div>
+            <div class="form-group">
+                <label for="module">Module:</label>
+                <select id="module" name="module" required>
+                    <option value="">Select Module</option>
+                    <!-- Populate with modules from the backend -->
+                    <option value="module1">Module 1</option>
+                    <option value="module2">Module 2</option>
+                    <option value="module3">Module 3</option>
+                    <!-- Add more modules as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="marks">Marks (out of 100):</label>
+                <input type="number" id="marks" name="marks" min="0" max="100" required>
+            </div>
+            <br>
+            <button type="submit">Add Result</button>
+        </form>
+    </section>
+</main>
+
+
+<main class="main">
+    <section id="student-registration">
+        <h2>Student Registration</h2>
+        <form id="studentRegistrationForm" onsubmit="return submitStudentRegistration()">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="fullNameWithInitials">Name with Initials:</label>
+                <input type="text" id="fullNameWithInitials" name="fullNameWithInitials" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="MobileNumber">Mobile Number:</label>
+                <input type="tel" id="MobileNumber" name="MobileNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="NIC">NIC:</label>
+                <input type="text" id="NIC" name="NIC" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value=""></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="course">Choose Course:</label>
+                <select id="course" name="course" required onchange="updateModules()">
+                    <option value=""></option>
+                    <option value="Course1">Course 1</option>
+                    <option value="Course2">Course 2</option>
+                    <option value="Course3">Course 3</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="module1">Choose Module 1:</label>
+                <select id="module1" name="module1" required>
+                    <option value=""></option>
+                    <option value="Course1">Course 1</option>
+                    <option value="Course2">Course 2</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="module2">Choose Module 2:</label>
+                <select id="module2" name="module2" required>
+                    <option value=""></option>
+                    <option value="Course1">Course 1</option>
+                    <option value="Course2">Course 2</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="module3">Choose Module 3:</label>
+                <select id="module3" name="module3" required>
+                    <option value=""></option>
+                    <option value="Course1">Course 1</option>
+                    <option value="Course2">Course 2</option>
+                </select>
+            </div>
+            <br>
+            <button type="submit">Register</button>
+        </form>
+    </section>
+</main>
+
+<script>
+    function updateModules() {
+        const course = document.getElementById('course').value;
+        const module1 = document.getElementById('module1');
+        const module2 = document.getElementById('module2');
+        const module3 = document.getElementById('module3');
+        
+        const moduleOptions = {
+            'Course1': ['Module 1.1', 'Module 1.2', 'Module 1.3'],
+            'Course2': ['Module 2.1', 'Module 2.2', 'Module 2.3'],
+            'Course3': ['Module 3.1', 'Module 3.2', 'Module 3.3']
+        };
+
+        module1.innerHTML = '';
+        module2.innerHTML = '';
+        module3.innerHTML = '';
+
+        if (moduleOptions[course]) {
+            moduleOptions[course].forEach(option => {
+                const opt1 = document.createElement('option');
+                const opt2 = document.createElement('option');
+                const opt3 = document.createElement('option');
+                
+                opt1.value = option;
+                opt1.text = option;
+                opt2.value = option;
+                opt2.text = option;
+                opt3.value = option;
+                opt3.text = option;
+                
+                module1.appendChild(opt1);
+                module2.appendChild(opt2);
+                module3.appendChild(opt3);
+            });
+        }
+    }
+
+    function submitStudentRegistration() {
+        // Perform form submission logic here, e.g., send data to the server
+        alert("Form submitted successfully!");
+        return false; // Prevent default form submission
+    }
+</script>
+
+
+
+
+<main class="main">
+    <section id="course-details-table">
+        <h2>Course Details Table</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>CD ID</th>
+                    <th>Course Name</th>
+                    <th>Course Type</th>
+                    <th>Duration</th>
+                    <th>Medium</th>
+                    <th>Course Level</th>
+                    <th>Modules</th>
+                    <th>Active</th>
+                    <th>Date Entered</th>
+                    <th>User</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Computer Science</td>
+                    <td>Degree</td>
+                    <td>4 years</td>
+                    <td>English</td>
+                    <td>Undergraduate</td>
+                    <td>CSCI101, CSCI102, CSCI103</td>
+                    <td>1</td>
+                    <td>2024-06-25</td>
+                    <td>Admin</td>
+                </tr>
+                <!-- Add more rows with data as needed -->
+                <tr>
+                    <td>2</td>
+                    <td>Information Technology</td>
+                    <td>Degree</td>
+                    <td>3 years</td>
+                    <td>English</td>
+                    <td>Undergraduate</td>
+                    <td>IT101, IT102, IT103,IT101, IT102, IT103,IT101, IT102, IT103,IT101, IT102, IT103</td>
+                    <td>1</td>
+                    <td>2024-06-25</td>
+                    <td>Admin</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<main class="main">
+    <section id="course-module-creation">
+        <h2>Course Module Creation</h2>
+        <form id="courseModuleForm" onsubmit="return submitCourseModule()">
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">Select Course</option>
+                    <!-- Populate with courses from the backend -->
+                    <option value="course1">Course 1</option>
+                    <option value="course2">Course 2</option>
+                    <option value="course3">Course 3</option>
+                    <!-- Add more courses as needed -->
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="moduleName">Module Name:</label>
+                <input type="text" id="moduleName" name="moduleName" required>
+            </div>
+            <div class="form-group">
+                <label for="moduleCode">Module Code:</label>
+                <input type="text" id="moduleCode" name="moduleCode" pattern="[A-Z]{3}\d{4}" required>
+                <small>Format: XXX0000 (e.g., CGP0027)</small>
+            </div>
+            <br>
+            <button type="submit">Add Module</button>
+        </form>
+    </section>
+</main>
+
+<main class="main">
+    <section id="student-result-inquiry">
+        <h2>Student Result Inquiry</h2>
+        <form id="resultInquiryForm" onsubmit="return inquireStudentResult()">
+            <div class="form-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" required>
+            </div>
+            <button type="submit">Inquire</button>
+        </form>
+    </section>
+
+    <section id="resultTable">
+        <!-- Student result table will be displayed here -->
+    </section>
+
+    <section id="downloadButton">
+        <!-- Download button for Excel report will be displayed here -->
+    </section>
+</main>
+
+
+<footer>
+    <p>&copy; 2024 IITC Student Management System.</p>
+</footer>
+

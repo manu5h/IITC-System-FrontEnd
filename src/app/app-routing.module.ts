@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChooseRoleComponent } from './components/choose-role/choose-role.component';
-import { StudentComponent } from './components/student/student.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { AdminComponent } from './components/admin-login/admin.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
-  {path: "", component: ChooseRoleComponent},
-  { path: 'student', component: StudentComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: '', component: AdminComponent },
+  {path: 'adminDashboard', component: AdminDashboardComponent}
 ];
 
 @NgModule({

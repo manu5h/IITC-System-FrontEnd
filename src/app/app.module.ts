@@ -3,16 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ChooseRoleComponent } from './components/choose-role/choose-role.component';
-import { StudentComponent } from './components/student/student.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { AdminComponent } from './components/admin-login/admin.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChooseRoleComponent,
-    StudentComponent,
     AdminComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
