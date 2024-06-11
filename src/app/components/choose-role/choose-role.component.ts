@@ -1,10 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-choose-role',
   templateUrl: './choose-role.component.html',
-  styleUrl: './choose-role.component.css'
+  styleUrls: ['./choose-role.component.css']
 })
-export class ChooseRoleComponent {
+export class ChooseRoleComponent implements OnInit {
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
+  navigate(role: string): void {
+    if (role === 'student') {
+      this.router.navigate(['/student']);
+    } else if (role === 'admin') {
+      this.router.navigate(['/admin']);
+    }
+  }
 
 }
