@@ -41,7 +41,7 @@ body {
 }
 .studentNote{
   position: absolute; 
-  top: 250px; 
+  top: 180px; 
   font-size: 25px;
   color: #017BAE; 
 }
@@ -62,7 +62,7 @@ body {
   margin: 0 auto; 
   color: #ffffff;
   background-color: black;
-  height: 20px;
+  height: 40px;
   
 }
 

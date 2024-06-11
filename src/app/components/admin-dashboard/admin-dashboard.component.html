@@ -5,7 +5,7 @@
 <main class="main">
     <section id="students-table">
         <h2>Students Table</h2>
-        <table class="data-table">
+        <table class="data-table" id="studentTable">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -18,7 +18,6 @@
                     <th>Mobile</th>
                     <th>Address</th>
                     <th>Gender</th>
-                    <th>Password</th>
                     <th>Date Entered</th>
                     <th>Module 1</th>
                     <th>Module 1 marks</th>
@@ -32,34 +31,53 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2024</td>
-                    <td>101</td>
-                    <td>John Doe</td>
-                    <td>J. Doe</td>
-                    <td>123456789</td>
-                    <td>MIS123456</td>
-                    <td>1234567890</td>
-                    <td>123 Main St</td>
-                    <td>Male</td>
-                    <td>asdefr34</td>
-                    <td>2024-06-25</td>
-                    <td>sc1454</td>
-                    <td>45</td>
-                    <td>sc1453</td>
-                    <td>89</td>
-                    <td>sc1452</td>
-                    <td>38</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-
+                <!-- Table rows will be dynamically added here -->
             </tbody>
         </table>
     </section>
 </main>
+
+<script>
+    // Fetch student data from the backend API
+    fetch('http://localhost:3000/students')
+    .then(response => response.json())
+    .then(students => {
+        console.log(students); // Add this line to check if data is fetched
+        const studentTableBody = document.getElementById('studentTable').getElementsByTagName('tbody')[0];
+
+        // Iterate over each student and create a table row
+        students.forEach(student => {
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${student.Id}</td>
+                <td>${student.CourseYear}</td>
+                <td>${student.CourseId}</td>
+                <td>${student.FullName}</td>
+                <td>${student.NameWithInitials}</td>
+                <td>${student.NIC}</td>
+                <td>${student.MISNumber}</td>
+                <td>${student.Mobile}</td>
+                <td>${student.Address}</td>
+                <td>${student.Gender}</td>
+                <td>${student.DateEntered}</td>
+                <td>${student.Module1}</td>
+                <td>${student.Module1Marks}</td>
+                <td>${student.Module2}</td>
+                <td>${student.Module2Marks}</td>
+                <td>${student.Module3}</td>
+                <td>${student.Module3Marks}</td>
+                <td>${student.Dropout}</td>
+                <td>${student.FinalExamSitted}</td>
+                <td>${student.Repeat}</td>
+            `;
+            studentTableBody.appendChild(newRow);
+        });
+    })
+    .catch(error => console.error('Error fetching student data:', error));
+
+</script>
+
+
 
 
 <main class="main">
