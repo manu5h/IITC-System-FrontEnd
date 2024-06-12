@@ -1,0 +1,64 @@
+<header>
+  <h1>IICT Admin Dashboard</h1>
+  <nav>
+      <ul>
+          <li><a routerLink="/adminDashboard">Dashboard</a></li>
+      </ul>
+  </nav>
+</header>
+<div class="container">
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Course Year</th>
+          <th>Course ID</th>
+          <th>Full Name</th>
+          <th>Name with Initials</th>
+          <th>NIC</th>
+          <th>MIS Number</th>
+          <th>Mobile</th>
+          <th>Address</th>
+          <th>Gender</th>
+          <th>Password</th>
+          <th>Date Entered</th>
+          <th>Module 1</th>
+          <th>Module 1 Marks</th>
+          <th>Module 2</th>
+          <th>Module 2 Marks</th>
+          <th>Module 3</th>
+          <th>Module 3 Marks</th>
+          <th>Dropout</th>
+          <th>Final Exam Sitted</th>
+          <th>Repeat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.ID }}</td>
+          <td>{{ student.CourseYear }}</td>
+          <td>{{ student.CourseID }}</td>
+          <td>{{ student.FullName }}</td>
+          <td>{{ student.NameWithInitials }}</td>
+          <td>{{ student.NIC }}</td>
+          <td>{{ student.MISNumber }}</td>
+          <td>{{ student.Mobile }}</td>
+          <td>{{ student.Address }}</td>
+          <td>{{ student.Gender }}</td>
+          <td>{{ student.Password }}</td>
+          <td>{{ student.DateEntered }}</td>
+          <td>{{ student.Module1 }}</td>
+          <td>{{ student.Module1Marks }}</td>
+          <td>{{ student.Module2 }}</td>
+          <td>{{ student.Module2Marks }}</td>
+          <td>{{ student.Module3 }}</td>
+          <td>{{ student.Module3Marks }}</td>
+          <td>{{ student.Dropout }}</td>
+          <td>{{ student.FinalExamSitted }}</td>
+          <td>{{ student.Repeat }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
