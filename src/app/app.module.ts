@@ -9,6 +9,8 @@ import { StudentListComponent } from './components/student-list/student-list.com
 import { HttpClientModule } from '@angular/common/http';
 import { StudentRegistrationComponent } from './components/student-registration/student-registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CourseListComponent } from './components/course-list/course-list.component';
+import { CourseCreateComponent } from './components/course-create/course-create.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdminComponent,
     AdminDashboardComponent,
     StudentListComponent,
-    StudentRegistrationComponent
+    StudentRegistrationComponent,
+    CourseListComponent,
+    CourseCreateComponent,
   ],
   imports: [
     BrowserModule,

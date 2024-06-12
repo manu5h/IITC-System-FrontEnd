@@ -1,0 +1,45 @@
+<header>
+    <h1>IICT Student Hub</h1>
+    <nav>
+        <ul>
+            <li><a routerLink="/students">Student Details</a></li>
+            <li><a routerLink="/student_registation">Register Student</a></li>
+            <li><a routerLink="/student_registation">Student Details</a></li>
+            <li><a routerLink="/course_list">Course List</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Course List</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>CD ID</th>
+          <th>Course Name</th>
+          <th>Course Type</th>
+          <th>Duration</th>
+          <th>Medium</th>
+          <th>Course Level</th>
+          <th>Modules</th>
+          <th>Module Code</th>
+          <th>Date Entered</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses">
+          <td>{{ course.CD_ID}}</td>
+          <td>{{ course.CourseName }}</td>
+          <td>{{ course.CourseType }}</td>
+          <td>{{ course.Duration }}</td>
+          <td>{{ course.Medium }}</td>
+          <td>{{ course.CourseLevel }}</td>
+          <td>{{ course.ModuleNames || 'N/A' }}</td>
+          <td>{{ course.ModuleCode }}</td>
+
+          <td>{{ course.DateEntered | date: 'yyyy-MM-dd' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

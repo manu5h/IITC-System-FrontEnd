@@ -4,107 +4,14 @@
         <ul>
             <li><a routerLink="/students">Student Details</a></li>
             <li><a routerLink="/student_registation">Register Student</a></li>
-            <li><a routerLink="/student_registation">Student Details</a></li>
+            <li><a routerLink="/course_list">Course List</a></li>
+            <li><a routerLink="/create-course">Create Course</a></li>
+            <li><a routerLink="/create-course-module">Create Course Module</a></li>
+            
         </ul>
     </nav>
 </header>
 
-
-<script>
-    function updateModules() {
-        const course = document.getElementById('course').value;
-        const module1 = document.getElementById('module1');
-        const module2 = document.getElementById('module2');
-        const module3 = document.getElementById('module3');
-        
-        const moduleOptions = {
-            'Course1': ['Module 1.1', 'Module 1.2', 'Module 1.3'],
-            'Course2': ['Module 2.1', 'Module 2.2', 'Module 2.3'],
-            'Course3': ['Module 3.1', 'Module 3.2', 'Module 3.3']
-        };
-
-        module1.innerHTML = '';
-        module2.innerHTML = '';
-        module3.innerHTML = '';
-
-        if (moduleOptions[course]) {
-            moduleOptions[course].forEach(option => {
-                const opt1 = document.createElement('option');
-                const opt2 = document.createElement('option');
-                const opt3 = document.createElement('option');
-                
-                opt1.value = option;
-                opt1.text = option;
-                opt2.value = option;
-                opt2.text = option;
-                opt3.value = option;
-                opt3.text = option;
-                
-                module1.appendChild(opt1);
-                module2.appendChild(opt2);
-                module3.appendChild(opt3);
-            });
-        }
-    }
-
-    function submitStudentRegistration() {
-        // Perform form submission logic here, e.g., send data to the server
-        alert("Form submitted successfully!");
-        return false; // Prevent default form submission
-    }
-</script>
-
-
-
-
-<main class="main">
-    <section id="course-details-table">
-        <h2>Course Details Table</h2>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>CD ID</th>
-                    <th>Course Name</th>
-                    <th>Course Type</th>
-                    <th>Duration</th>
-                    <th>Medium</th>
-                    <th>Course Level</th>
-                    <th>Modules</th>
-                    <th>Active</th>
-                    <th>Date Entered</th>
-                    <th>User</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Computer Science</td>
-                    <td>Degree</td>
-                    <td>4 years</td>
-                    <td>English</td>
-                    <td>Undergraduate</td>
-                    <td>CSCI101, CSCI102, CSCI103</td>
-                    <td>1</td>
-                    <td>2024-06-25</td>
-                    <td>Admin</td>
-                </tr>
-                <!-- Add more rows with data as needed -->
-                <tr>
-                    <td>2</td>
-                    <td>Information Technology</td>
-                    <td>Degree</td>
-                    <td>3 years</td>
-                    <td>English</td>
-                    <td>Undergraduate</td>
-                    <td>IT101, IT102, IT103,IT101, IT102, IT103,IT101, IT102, IT103,IT101, IT102, IT103</td>
-                    <td>1</td>
-                    <td>2024-06-25</td>
-                    <td>Admin</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-</main>
 
 <main class="main">
     <section id="course-module-creation">
