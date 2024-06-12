@@ -1,8 +1,10 @@
 <header>
-  <h1>IICT Admin Dashboard</h1>
+  <h1>IICT Student Hub</h1>
   <nav>
       <ul>
-          <li><a routerLink="/adminDashboard">Dashboard</a></li>
+          <li><a routerLink="/students">Student Details</a></li>
+          <li><a routerLink="/student_registation">Register Student</a></li>
+          <li><a routerLink="/student_registation">Student Details</a></li>
       </ul>
   </nav>
 </header>
@@ -21,7 +23,6 @@
           <th>Mobile</th>
           <th>Address</th>
           <th>Gender</th>
-          <th>Password</th>
           <th>Date Entered</th>
           <th>Module 1</th>
           <th>Module 1 Marks</th>
@@ -46,8 +47,7 @@
           <td>{{ student.Mobile }}</td>
           <td>{{ student.Address }}</td>
           <td>{{ student.Gender }}</td>
-          <td>{{ student.Password }}</td>
-          <td>{{ student.DateEntered }}</td>
+          <td>{{ student.DateEntered | date:'yyyy-MM-dd' }}</td>
           <td>{{ student.Module1 }}</td>
           <td>{{ student.Module1Marks }}</td>
           <td>{{ student.Module2 }}</td>

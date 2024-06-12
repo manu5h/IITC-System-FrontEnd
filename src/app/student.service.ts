@@ -14,4 +14,8 @@ export class StudentService {
   getAllStudents(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/students`);
   }
+
+  registerStudent(studentData: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/students`, studentData);
+  }
 }

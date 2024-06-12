@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../../student.service'; // Import the StudentService
+import { StudentService } from '../../student.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
-  styleUrls: ['./student-list.component.css']
+  styleUrls: ['./student-list.component.css'],
+  providers: [DatePipe]
+
 })
 export class StudentListComponent implements OnInit {
   students: any[] = [];
 
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.fetchStudents(); // Fetch students data when the component initializes

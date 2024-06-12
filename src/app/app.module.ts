@@ -7,6 +7,8 @@ import { AdminComponent } from './components/admin-login/admin.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StudentRegistrationComponent } from './components/student-registration/student-registration.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
     AdminComponent,
     AdminDashboardComponent,
     StudentListComponent,
+    StudentRegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

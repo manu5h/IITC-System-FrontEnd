@@ -1,0 +1,53 @@
+<header>
+    <h1>IICT Student Hub</h1>
+    <nav>
+        <ul>
+            <li><a routerLink="/students">Student Details</a></li>
+            <li><a routerLink="/student_registration">Register Student</a></li>
+            <li><a routerLink="/student_details">Student Details</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main">
+    <section id="student-registration">
+        <h2>Student Registration</h2>
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" formControlName="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="fullNameWithInitials">Name with Initials:</label>
+                <input type="text" id="fullNameWithInitials" formControlName="nameWithInitials" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" formControlName="address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" formControlName="mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="MISNumber">MIS Number:</label>
+                <input type="text" id="MISNumber" formControlName="MISNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="NIC">NIC:</label>
+                <input type="text" id="NIC" formControlName="NIC" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" formControlName="gender" required>
+                    <option value=""></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <input type="hidden" formControlName="dateEntered">
+            <br>
+            <button type="submit" [disabled]="!registrationForm.valid">Register</button>
+        </form>
+    </section>
+</main>
