@@ -30,7 +30,7 @@
 
 <script>
   function validateAdminLogin(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); 
 
     const email = document.getElementById('form2Example1').value;
     const password = document.getElementById('form2Example2').value;
@@ -41,7 +41,7 @@
 
     if (email === validEmail && password === validPassword) {
       alert("Login successful!");
-      // Import the Router service and navigate to the admin dashboard route
+      
       window.location.href = '/adminDashboard';
     } else {
       alert("Invalid email or password. Please try again.");

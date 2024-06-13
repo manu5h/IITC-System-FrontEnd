@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CourseService {
 
-  private baseUrl = 'http://localhost:3000'; // Update with your backend URL
+  private baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
@@ -16,7 +16,7 @@ export class CourseService {
   }
 
   addCourse(courseData: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/courses`, courseData); // Pass courseData as the second argument
+    return this.http.post<any>(`${this.baseUrl}/courses`, courseData); 
   }
 
   addCourseModule(moduleData: any): Observable<any> {

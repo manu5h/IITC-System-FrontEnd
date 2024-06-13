@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { StudentService } from '../../student.service'; // Replace with your service
+import { StudentService } from '../../student.service';
 import { ParamMap } from '@angular/router';
 
 @Component({
@@ -12,8 +12,8 @@ import { ParamMap } from '@angular/router';
 export class EditStudentComponent implements OnInit {
   editForm: FormGroup;
   studentId: number | null = null;
-  modulesList: any[] = []; // Replace with your module interface or type
-  modulesAssignedToCourse: any[] = []; // Replace with your module interface or type
+  modulesList: any[] = []; 
+  modulesAssignedToCourse: any[] = []; 
 
   constructor(
     private fb: FormBuilder,
@@ -42,10 +42,10 @@ export class EditStudentComponent implements OnInit {
       this.studentId = id ? +id : null;
 
       if (this.studentId !== null) {
-        // Fetch student details based on ID
+    
         this.studentService.getStudentById(this.studentId).subscribe(
           (data: any) => {
-            this.editForm.patchValue(data); // Populate form with fetched data
+            this.editForm.patchValue(data); 
           },
           (error) => {
             console.error('Error fetching student details:', error);
@@ -53,7 +53,7 @@ export class EditStudentComponent implements OnInit {
         );
       }
 
-      // Fetch modules list and modules assigned to course
+     
       this.studentService.getModulesList().subscribe(
         (data: any[]) => {
           this.modulesList = data;
@@ -80,7 +80,7 @@ export class EditStudentComponent implements OnInit {
       this.studentService.updateStudentDetails(formData).subscribe(
         () => {
           console.log('Student details updated successfully');
-          // Optionally, navigate to student list or show success message
+     
         },
         (error) => {
           console.error('Error updating student details:', error);

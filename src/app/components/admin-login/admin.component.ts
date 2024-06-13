@@ -10,7 +10,7 @@ export class AdminComponent {
   constructor() { }
 
   validateAdminLogin(event: Event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); 
 
     const email = (document.getElementById('form2Example1') as HTMLInputElement).value;
     const password = (document.getElementById('form2Example2') as HTMLInputElement).value;

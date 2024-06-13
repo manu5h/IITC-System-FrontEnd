@@ -33,7 +33,7 @@ export class CourseCreateComponent implements OnInit {
     });
   }
 
-  // Custom validator for module code
+  
   moduleCodeValidator(control: AbstractControl): ValidationErrors | null {
     const moduleCodePattern = /^[A-Z]{3}[0-9]{4}$/;
     if (!moduleCodePattern.test(control.value)) {
@@ -47,7 +47,7 @@ export class CourseCreateComponent implements OnInit {
       const currentDate = new Date().toISOString().slice(0, 10);
       const formData = { ...this.courseForm.value, dateEntered: currentDate };
   
-      console.log('Form Data:', formData); // Check the console for moduleCode presence
+      console.log('Form Data:', formData); 
   
       this.courseService.addCourse(formData).subscribe(
         response => {

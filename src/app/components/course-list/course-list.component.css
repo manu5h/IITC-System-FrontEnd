@@ -23,9 +23,6 @@ nav ul li a {
   text-decoration: none;
 }
 
-  /* course-list.component.css */
-
-/* Container styles */
 .container {
     padding: 20px;
     margin: auto;
@@ -34,8 +31,7 @@ nav ul li a {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
-  /* Heading styles */
+
   h2 {
     text-align: center;
     color: #333;
@@ -43,8 +39,7 @@ nav ul li a {
     font-family: 'Arial', sans-serif;
     font-weight: 700;
   }
-  
-  /* Table styles */
+ 
   .table {
     width: 100%;
     border-collapse: collapse;
@@ -52,7 +47,7 @@ nav ul li a {
     margin-top: 20px;
   }
   
-  /* Table header styles */
+  
   .table thead th {
     background-color: #007bff;
     color: #fff;
@@ -62,7 +57,7 @@ nav ul li a {
     border-bottom: 2px solid #dee2e6;
   }
   
-  /* Table body styles */
+
   .table tbody tr:nth-child(even) {
     background-color: #f2f2f2;
   }
@@ -76,7 +71,6 @@ nav ul li a {
     border-bottom: 1px solid #dee2e6;
   }
   
-  /* Additional styles for mobile responsiveness */
   @media (max-width: 768px) {
     .container {
       padding: 10px;

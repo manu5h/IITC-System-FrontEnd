@@ -32,7 +32,7 @@ header {
     padding: 20px;
     margin-top: 10px;
     min-height: 100vh; 
-    background-image: url("../../../assets/homepageBackgroundImage.jpg"); /* Ensure this path is correct */
+    background-image: url("../../../assets/homepageBackgroundImage.jpg"); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,7 +41,7 @@ header {
   }
   
   #student-registration {
-    background-color: rgba(91, 127, 245, 0.9); /* Slightly transparent background */
+    background-color: rgba(91, 127, 245, 0.9); 
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -49,7 +49,7 @@ header {
     width: 100%;
   }
   
-  /* Styling for the form heading */
+  
   #student-registration h2 {
     text-align: center;
     color: #333;
@@ -57,7 +57,7 @@ header {
     font-size: 24px;
   }
   
-  /* Flexbox layout for form groups */
+ 
   .form-group {
     display: flex;
     flex-direction: column;
@@ -70,7 +70,7 @@ header {
     color: #555;
   }
   
-  /* Styling for input fields and textareas */
+ 
   .form-group input[type="text"],
   .form-group input[type="tel"],
   .form-group select,
@@ -88,7 +88,7 @@ header {
     height: 100px;
   }
   
-  /* Styling for the submit button */
+  
   button[type="submit"] {
     background-color: #4caf50;
     color: white;
@@ -110,7 +110,7 @@ header {
     cursor: not-allowed;
   }
   
-  /* Responsive design for smaller screens */
+  
   @media (max-width: 600px) {
     #student-registration {
       padding: 15px;
