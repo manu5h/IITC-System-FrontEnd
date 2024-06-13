@@ -6,6 +6,7 @@ import { StudentListComponent } from './components/student-list/student-list.com
 import { StudentRegistrationComponent } from './components/student-registration/student-registration.component';
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { CourseCreateComponent} from './components/course-create/course-create.component';
+import { CourseModuleCreateComponent } from './components/course-module-create/course-module-create.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'student_registation', component: StudentRegistrationComponent },
   { path: 'course_list', component: CourseListComponent },
   { path: 'create-course', component: CourseCreateComponent },
+  { path: 'create-course-module', component: CourseModuleCreateComponent },
 ];
 
 @NgModule({

@@ -19,5 +19,9 @@ export class CourseService {
     return this.http.post<any>(`${this.baseUrl}/courses`, courseData); // Pass courseData as the second argument
   }
 
+  addCourseModule(moduleData: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/course-modules`, moduleData);
+  }
+
   
 }
