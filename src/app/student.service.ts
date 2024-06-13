@@ -6,11 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StudentService {
-  private baseUrl = 'http://localhost:3000'; // Adjust this URL to match your backend API endpoint
+  private baseUrl = 'http://localhost:3000'; 
 
   constructor(private http: HttpClient) { }
 
-  // Method to fetch all student data from the backend
   getAllStudents(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/students`);
   }
@@ -18,4 +17,27 @@ export class StudentService {
   registerStudent(studentData: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/students`, studentData);
   }
+  getStudents(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/students`);
+  }
+
+  updateStudent(student: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/students/${student.id}`, student);
+  }
+  getStudentById(studentId: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/students/${studentId}`);
+  }
+
+  getModulesList(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/modules`);
+  }
+
+  getModulesAssignedToCourse(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/modules/assigned`);
+  }
+
+  updateStudentDetails(studentData: any): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/students/${studentData.studentId}`, studentData);
+  }
+  
 }

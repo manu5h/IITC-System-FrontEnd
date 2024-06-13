@@ -1,29 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../../student.service';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
-  styleUrls: ['./student-list.component.css'],
-  providers: [DatePipe]
-
+  styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
   students: any[] = [];
+  editIndex: number | null = null;
 
-  constructor(private studentService: StudentService, private datePipe: DatePipe) { }
+  constructor(private studentService: StudentService) {}
 
   ngOnInit(): void {
-    this.fetchStudents(); // Fetch students data when the component initializes
+    this.loadStudents();
   }
 
-  fetchStudents() {
-    this.studentService.getAllStudents().subscribe(
-      (students: any[]) => {
-        this.students = students; // Assign the fetched students to the component property
+  loadStudents(): void {
+    this.studentService.getStudents().subscribe(
+      (data) => {
+        this.students = data;
       },
-      error => console.error('Error fetching student data:', error)
+      (error) => {
+        console.error('Error fetching students', error);
+      }
     );
   }
+
+
 }

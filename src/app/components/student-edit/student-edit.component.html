@@ -1,0 +1,77 @@
+<header>
+    <h1>IICT Student Hub</h1>
+    <nav>
+        <ul>
+            <li><a routerLink="/adminDashboard">Dashboard</a></li>
+            <li><a routerLink="/students">Student Details</a></li>
+            <li><a routerLink="/student-edit">Edit Student Data</a></li>
+            <li><a routerLink="/student_registation">Register Student</a></li>
+            <li><a routerLink="/course_list">Course List</a></li>
+            <li><a routerLink="/create-course">Create Course</a></li>
+            <li><a routerLink="/create-course-module">Create Course Module</a></li>
+        </ul>
+    </nav>
+</header>
+<section>
+    <h2>Edit Student Details</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="studentId">Student ID:</label>
+        <input type="text" id="studentId" formControlName="studentId">
+      </div>
+      <div>
+        <label for="courseYear">Course Year:</label>
+        <input type="text" id="courseYear" formControlName="courseYear">
+      </div>
+      <div>
+        <label for="moduleId">Module ID:</label>
+        <select id="moduleId" formControlName="moduleId">
+          <option *ngFor="let module of modulesList" [ngValue]="module.ModuleId">{{ module.ModuleName }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="module1">Module 1:</label>
+        <select id="module1" formControlName="module1">
+          <option *ngFor="let module of modulesAssignedToCourse" [ngValue]="module.ModuleName">{{ module.ModuleName }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="module1Marks">Module 1 Marks:</label>
+        <input type="number" id="module1Marks" formControlName="module1Marks">
+      </div>
+      <div>
+        <label for="module2">Module 2:</label>
+        <select id="module2" formControlName="module2">
+          <option *ngFor="let module of modulesAssignedToCourse" [ngValue]="module.ModuleName">{{ module.ModuleName }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="module2Marks">Module 2 Marks:</label>
+        <input type="number" id="module2Marks" formControlName="module2Marks">
+      </div>
+      <div>
+        <label for="module3">Module 3:</label>
+        <select id="module3" formControlName="module3">
+          <option *ngFor="let module of modulesAssignedToCourse" [ngValue]="module.ModuleName">{{ module.ModuleName }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="module3Marks">Module 3 Marks:</label>
+        <input type="number" id="module3Marks" formControlName="module3Marks">
+      </div>
+      <div>
+        <label for="dropout">Dropout:</label>
+        <input type="checkbox" id="dropout" formControlName="dropout">
+      </div>
+      <div>
+        <label for="finalExamSitted">Final Exam Sitted:</label>
+        <input type="checkbox" id="finalExamSitted" formControlName="finalExamSitted">
+      </div>
+      <div>
+        <label for="repeatStudent">Repeat:</label>
+        <input type="checkbox" id="repeatStudent" formControlName="repeatStudent">
+      </div>
+      <button type="submit" [disabled]="editForm.invalid">Save</button>
+    </form>
+  </section>
+  

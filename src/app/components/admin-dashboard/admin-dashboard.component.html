@@ -1,41 +1,46 @@
 <header>
     <h1>IICT Student Hub</h1>
-    <nav>
-        <ul>
-            <li><a routerLink="/students">Student Details</a></li>
-            <li><a routerLink="/student_registation">Register Student</a></li>
-            <li><a routerLink="/course_list">Course List</a></li>
-            <li><a routerLink="/create-course">Create Course</a></li>
-            <li><a routerLink="/create-course-module">Create Course Module</a></li>
-            
-        </ul>
-    </nav>
 </header>
 
+<main>
+<section class="dashboard-cards">
+    <div class="card">
+        <a routerLink="/students">
+            <h2>Student Details</h2>
+        </a>
+    </div>
+    <div class="card">
+        <a routerLink="/student-edit">
+            <h2>Edit Student Data</h2>
+        </a>
+    </div>
+    <div class="card">
+        <a routerLink="/student_registation">
+            <h2>Register Student</h2>
+        </a>
 
-<main class="main">
-    <section id="student-result-inquiry">
-        <h2>Student Result Inquiry</h2>
-        <form id="resultInquiryForm" onsubmit="return inquireStudentResult()">
-            <div class="form-group">
-                <label for="studentId">Student ID:</label>
-                <input type="text" id="studentId" name="studentId" required>
-            </div>
-            <button type="submit">Inquire</button>
-        </form>
-    </section>
+    </div>
+    <div class="card">
+        <a routerLink="/course_list">
+            <h2>Course List</h2>
+        </a>
 
-    <section id="resultTable">
-        <!-- Student result table will be displayed here -->
-    </section>
+    </div>
+    <div class="card">
+        <a routerLink="/create-course">
+            <h2>Create new Course</h2>
+        </a>
 
-    <section id="downloadButton">
-        <!-- Download button for Excel report will be displayed here -->
-    </section>
+    </div>
+    <div class="card">
+        <a routerLink="/create-course-module">
+            <h2>Create Course Module</h2>
+        </a>
+
+    </div>
+</section>
 </main>
-
 
 <footer>
     <p>&copy; 2024 IITC Student Management System.</p>
 </footer>
-

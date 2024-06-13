@@ -6,13 +6,13 @@ header {
     padding: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertically center the content */
+    align-items: center; 
   }
   
   nav ul {
     list-style-type: none;
     padding: 0;
-    margin-right: 20px; /* Add margin to the right side */
+    margin-right: 20px; 
   }
   
   nav ul li {

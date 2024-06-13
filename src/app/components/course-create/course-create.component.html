@@ -1,16 +1,20 @@
 <header>
-  <h1>IICT Student Hub</h1>
-  <nav>
+  <header>
+    <h1>IICT Student Hub</h1>
+    <nav>
       <ul>
-          <li><a routerLink="/students">Student Details</a></li>
-          <li><a routerLink="/student_registation">Register Student</a></li>
-          <li><a routerLink="/course_list">Course List</a></li>
-          <li><a routerLink="/create-course">Create Course</a></li>
+        <li><a routerLink="/adminDashboard">Dashboard</a></li>
+        <li><a routerLink="/students">Student Details</a></li>
+        <li><a routerLink="/student-edit">Edit Student Data</a></li>
+        <li><a routerLink="/student_registation">Register Student</a></li>
+        <li><a routerLink="/course_list">Course List</a></li>
+        <li><a routerLink="/create-course">Create Course</a></li>
+        <li><a routerLink="/create-course-module">Create Course Module</a></li>
       </ul>
-  </nav>
-</header>
-<br>
-<div class="container">
+    </nav>
+  </header>
+  <br>
+  <div class="container">
     <h2>Create Course</h2>
     <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
@@ -40,11 +44,11 @@
       <div class="form-group">
         <label for="moduleCode">Module Code:</label>
         <input type="text" id="moduleCode" formControlName="moduleCode" required>
-        <div *ngIf="courseForm.controls['moduleCode'].hasError('invalidModuleCode') && courseForm.controls['moduleCode'].touched">
+        <div
+          *ngIf="courseForm.controls['moduleCode'].hasError('invalidModuleCode') && courseForm.controls['moduleCode'].touched">
           <small class="error">Module code must be in the format XXX0000.</small>
         </div>
-      </div>      
+      </div>
       <button type="submit" [disabled]="!courseForm.valid">Create Course</button>
     </form>
   </div>
-  
