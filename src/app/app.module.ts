@@ -13,6 +13,7 @@ import { CourseListComponent } from './components/course-list/course-list.compon
 import { CourseCreateComponent } from './components/course-create/course-create.component';
 import { CourseModuleCreateComponent } from './components/course-module-create/course-module-create.component';
 import { EditStudentComponent } from './components/student-edit/student-edit.component';
+import { ZeroPadPipe } from './zero-pad.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditStudentComponent } from './components/student-edit/student-edit.com
     CourseListComponent,
     CourseCreateComponent,
     CourseModuleCreateComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    ZeroPadPipe
   ],
   imports: [
     BrowserModule,

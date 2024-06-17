@@ -41,7 +41,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let student of students">
-          <td>{{ student.ID }}</td>
+          <td>{{ student.ID | zeroPad }}</td>
           <td>{{ student.CourseYear }}</td>
           <td>{{ student.CourseID }}</td>
           <td>{{ student.FullName }}</td>

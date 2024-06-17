@@ -31,7 +31,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let course of courses">
-          <td>{{ course.CD_ID}}</td>
+          <td>{{ course.CD_ID | zeroPad }}</td>
           <td>{{ course.CourseName }}</td>
           <td>{{ course.CourseType }}</td>
           <td>{{ course.Duration }}</td>
