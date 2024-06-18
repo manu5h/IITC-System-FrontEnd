@@ -17,14 +17,14 @@ export class StudentRegistrationComponent implements OnInit {
 
   ngOnInit(): void {
     this.registrationForm = this.formBuilder.group({
-      fullName: ['', Validators.required],
-      nameWithInitials: ['', Validators.required],
-      address: ['', Validators.required],
-      mobile: ['', Validators.required],
+      FullName: ['', Validators.required],
+      NameWithInitials: ['', Validators.required],
+      Address: ['', Validators.required],
+      Mobile: ['', Validators.required],
       MISNumber: ['', Validators.required],
       NIC: ['', Validators.required],
-      gender: ['', Validators.required],
-      dateEntered: ['']
+      Gender: ['', Validators.required],
+      DateEntered: ['']
     });
   }
 

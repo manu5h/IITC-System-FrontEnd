@@ -18,20 +18,20 @@
         <h2>Student Registration</h2>
         <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" formControlName="fullName" required>
+                <label for="FullName">Full Name:</label>
+                <input type="text" id="FullName" formControlName="FullName" required>
             </div>
             <div class="form-group">
-                <label for="fullNameWithInitials">Name with Initials:</label>
-                <input type="text" id="fullNameWithInitials" formControlName="nameWithInitials" required>
+                <label for="NameWithInitials">Name with Initials:</label>
+                <input type="text" id="NameWithInitials" formControlName="NameWithInitials" required>
             </div>
             <div class="form-group">
-                <label for="address">Address:</label>
-                <textarea id="address" formControlName="address" required></textarea>
+                <label for="Address">Address:</label>
+                <textarea id="Address" formControlName="Address" required></textarea>
             </div>
             <div class="form-group">
-                <label for="mobile">Mobile Number:</label>
-                <input type="tel" id="mobile" formControlName="mobile" required>
+                <label for="Mobile">Mobile Number:</label>
+                <input type="tel" id="Mobile" formControlName="Mobile" required>
             </div>
             <div class="form-group">
                 <label for="MISNumber">MIS Number:</label>
@@ -42,16 +42,18 @@
                 <input type="text" id="NIC" formControlName="NIC" required>
             </div>
             <div class="form-group">
-                <label for="gender">Gender:</label>
-                <select id="gender" formControlName="gender" required>
+                <label for="Gender">Gender:</label>
+                <select id="Gender" formControlName="Gender" required>
                     <option value=""></option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
             </div>
-            <input type="hidden" formControlName="dateEntered">
+            <!-- Hidden field for DateEntered will be populated automatically -->
+            <input type="hidden" formControlName="DateEntered">
             <br>
             <button type="submit" [disabled]="!registrationForm.valid">Register</button>
         </form>
     </section>
 </main>
+
