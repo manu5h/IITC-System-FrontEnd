@@ -22,8 +22,8 @@
                 <input type="text" id="FullName" formControlName="FullName" required>
             </div>
             <div class="form-group">
-                <label for="NameWithInitials">Name with Initials:</label>
-                <input type="text" id="NameWithInitials" formControlName="NameWithInitials" required>
+                <label for="FullNameWithInitials">Name with Initials:</label>
+                <input type="text" id="FullNameWithInitials" formControlName="FullNameWithInitials" required>
             </div>
             <div class="form-group">
                 <label for="Address">Address:</label>
@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="Mobile">Mobile Number:</label>
-                <input type="tel" id="Mobile" formControlName="Mobile" required>
+                <input type="Mobile" id="Mobile" formControlName="Mobile" required>
             </div>
             <div class="form-group">
                 <label for="MISNumber">MIS Number:</label>
@@ -49,11 +49,9 @@
                     <option value="Female">Female</option>
                 </select>
             </div>
-            <!-- Hidden field for DateEntered will be populated automatically -->
-            <input type="hidden" formControlName="DateEntered">
+            <input type="hidden" formControlName="dateEntered">
             <br>
             <button type="submit" [disabled]="!registrationForm.valid">Register</button>
         </form>
     </section>
 </main>
-

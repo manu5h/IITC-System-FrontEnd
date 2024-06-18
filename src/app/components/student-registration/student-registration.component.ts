@@ -18,7 +18,7 @@ export class StudentRegistrationComponent implements OnInit {
   ngOnInit(): void {
     this.registrationForm = this.formBuilder.group({
       FullName: ['', Validators.required],
-      NameWithInitials: ['', Validators.required],
+      FullNameWithInitials: ['', Validators.required],
       Address: ['', Validators.required],
       Mobile: ['', Validators.required],
       MISNumber: ['', Validators.required],
@@ -34,7 +34,7 @@ export class StudentRegistrationComponent implements OnInit {
       console.log('Current Date:', currentDate);
       console.log('Form Data:', this.registrationForm.value);
 
-      this.registrationForm.patchValue({ dateEntered: currentDate });
+      this.registrationForm.patchValue({ DateEntered: currentDate });
       this.studentService
         .registerStudent(this.registrationForm.value)
         .subscribe(
@@ -42,10 +42,7 @@ export class StudentRegistrationComponent implements OnInit {
             alert('Student registered successfully');
             this.registrationForm.reset();
           },
-          (error) => {
-            alert('Error registering student: ' + error.message);
-            console.error('Error registering student:', error);
-          }
+          
         );
     }
   }
